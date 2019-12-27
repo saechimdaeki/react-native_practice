@@ -1,18 +1,87 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet,StatusBar } from "react-native";
 import PropTypes from "prop-types";
+import {MaterialCommunityIcons} from "@expo/vector-icons";
+import {LinearGradient} from "expo-linear-gradient";
 
-export default function Weather({ temp }) {
+const weatherOptions = {
+  Haze: {
+    iconName: "weather-hail",
+    gradient: ["#4DA0B0", "#D39D38"]
+  },
+  Thunderstorm: {
+    iconName: "",
+    gradient: []
+  },
+  Drizzle: {
+    iconName: "",
+    gradient: []
+  },
+  Rain: {
+    iconName: "",
+    gradient: []
+  },
+  Snow: {
+    iconName: "",
+    gradient: []
+  },
+  Atmosphere: {
+    iconName: "",
+    gradient: []
+  },
+  Clear: {
+    iconName: "",
+    gradient: []
+  },
+  Clouds: {
+    iconName: "",
+    gradient: []
+  },
+  Haze: {
+    iconName: "",
+    gradient: []
+  },
+  Mist: {
+    iconName: "",
+    gradient: []
+  },
+  Dust: {
+    iconName: "",
+    gradient: []
+  }
+};
+export default function Weather({ temp ,condition}) {
   return (
-    <View style={styles.container}>
-      <Text>{temp}</Text>
-    </View>
+    <LinearGradient
+      colors={weatherOptions[condition].gradient}
+      style={styles.container}
+      >
+
+      <StatusBar barStyle="light-content"/>
+     <View style={styles.halfContainer}>
+        <MaterialCommunityIcons 
+        size={96} 
+        name={weatherOptions[condition].iconName}
+        color="white"
+        />
+        <Text style={styles.temp}>{temp}o</Text>
+      </View>
+      <View style={styles.halfContainer} />
+      </LinearGradient>
   );
 }
 
 Weather.propTypes = {
   temp: PropTypes.number.isRequired,
-  condition: PropTypes.oneOf(["ThunderStorm","Drizzle","Snow","Atomsphere","Clear","clouds","Haze","Mist","Dust"]).isRequired
+  condition: PropTypes.oneOf(["ThunderStorm",
+  "Drizzle",
+  "Snow",
+  "Atomsphere",
+  "Clear",
+  "clouds",
+  "Haze",
+  "Mist",
+  "Dust"]).isRequired
 };
 
 const styles = StyleSheet.create({
@@ -20,5 +89,14 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center"
+  },
+  temp:{
+    fontSize:42,
+    color:"white"
+  },
+  halfContainer:{
+    flex:1,
+    justifyContent:"center",
+    alignItems:"center"
   }
 });
