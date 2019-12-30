@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Button,Text, View,TextInput, Image,StyleSheet} from 'react-native';
-import {createAppContainer} from 'react-navigation';
-import {createStackNavigator} from 'react-navigation-stack';
+import {createStackNavigator} from 'react-navigation';
 
 
 
@@ -16,7 +15,7 @@ const styles=StyleSheet.create({
 
 
 
-class dimension extends Component{
+export default class dimension extends Component{
   
     
   _onPressButton(){
@@ -45,42 +44,19 @@ class dimension extends Component{
             title="로그인"
             color="blue"
              />
-
-         
-         
         </View>
          <View style={{marginTop:20,flex:1, flexDirection:'row' ,dimension:1}}>
          <Image source={require('./image/android.png')}
        style={{width:'40%' ,height: 100}} />
        <Image source={require('./image/iphone.png')}
        style={{marginLeft:40,width:'40%' ,height: 100}} />
+        <View style={{flex:1, flexDirection:'row'}}>
+            <Text style={{fontSize:10}}>회원가입</Text>
+            <Text style={{marginLeft:5,fontSize:10}}>아이디/비밀번호 찾기</Text>
+        </View>
           </View>
+
         </View>
     )
   }
 }
-class DetailsScreen extends React.Component {
-  render() {
-  return (
-  <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-  <Text>Seonoh Detail Screen</Text>
-  <Button
-  title = 'Go Home screen'
-  onPress = {()=>this.props.navigation.navigate('dim')}/>
-  </View>
-  );
-  }
-  }
-  
-
-const AppNavigator = createStackNavigator(
-  {
-    dim:dimension,
-    Details:DetailsScreen
-  },
-{
-  initialRouteName:'dim',
-}
-);
-
-export default createAppContainer(AppNavigator);
