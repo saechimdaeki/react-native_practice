@@ -1,114 +1,67 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
+import React, { Component } from 'react';
+import { Button,Text, View,TextInput, Image,StyleSheet} from 'react-native';
+import CheckBox from '@react-native-community/checkbox';
 
-import React from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  StatusBar,
-} from 'react-native';
 
-import {
-  Header,
-  LearnMoreLinks,
-  Colors,
-  DebugInstructions,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+const styles=StyleSheet.create({
+  abc:{
 
-const App: () => React$Node = () => {
-  return (
-    <>
-      <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-        <ScrollView
-          contentInsetAdjustmentBehavior="automatic"
-          style={styles.scrollView}>
-          <Header />
-          {global.HermesInternal == null ? null : (
-            <View style={styles.engine}>
-              <Text style={styles.footer}>Engine: Hermes</Text>
-            </View>
-          )}
-          <View style={styles.body}>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Step One</Text>
-              <Text style={styles.sectionDescription}>
-                Edit <Text style={styles.highlight}>App.js</Text> to change this
-                screen and then come back to see your edits.
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>See Your Changes</Text>
-              <Text style={styles.sectionDescription}>
-                <ReloadInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Debug</Text>
-              <Text style={styles.sectionDescription}>
-                <DebugInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Learn More</Text>
-              <Text style={styles.sectionDescription}>
-                Read the docs to discover what to do next:
-              </Text>
-            </View>
-            <LearnMoreLinks />
-          </View>
-        </ScrollView>
-      </SafeAreaView>
-    </>
-  );
-};
-
-const styles = StyleSheet.create({
-  scrollView: {
-    backgroundColor: Colors.lighter,
   },
-  engine: {
-    position: 'absolute',
-    right: 0,
-  },
-  body: {
-    backgroundColor: Colors.white,
-  },
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-    color: Colors.black,
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-    color: Colors.dark,
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-  footer: {
-    color: Colors.dark,
-    fontSize: 12,
-    fontWeight: '600',
-    padding: 4,
-    paddingRight: 12,
-    textAlign: 'right',
+  for_login:{
+      flex:1,
+      alignItems:'center'
   },
 });
 
-export default App;
+
+
+export default class dimension extends Component{
+  _onPressButton(){
+    alert('tapped the button')
+  }
+  render(){
+    return (
+        <View style={styles.Container}>
+        <Image source={{uri: 'https://facebook.github.io/react/logo-og.png'}}
+       style={{marginLeft:120,width: 100, height: 100,alignContent:"center",justifyContent:"center"}} />
+        <Text style={{marginLeft:100,alignItems:"center",justifyContent:"center"}}>플립드 러닝을 위한 포털</Text>
+        <TextInput style={{backgroundColor:'white'}}>
+          직번(학번)
+        </TextInput>
+        <TextInput style={{marginTop:20,backgroundColor:'white'}}>
+          비밀번호
+        </TextInput>
+
+        <CheckBox
+    style={{flex: 1, padding: 10}}
+    onClick={()=>{
+      this.setState({
+          isChecked:!this.state.isChecked
+      })
+    }}
+    isChecked={this.state.isChecked}
+    leftText={"CheckBox"}
+/>
+
+        <View style={{marginTop:10}}>
+          <Button
+          
+            onPress={this._onPressButton}
+            title="로그인"
+            color="blue"
+          />
+         
+        </View>
+         <View style={{flex:1}}>
+           <Text>dada13131313</Text>
+           
+        </View>
+        
+        </View>
+       
+       
+       
+  
+    )
+  }
+}
