@@ -45,13 +45,13 @@ export default class dimension extends Component{
             color="blue"
              />
         </View>
-         <View style={{marginTop:20,flex:1, flexDirection:'row' ,dimension:1}}>
+         <View style={{marginTop:20,flex:1,backgroundColor:'gray', flexDirection:'row' ,dimension:1}}>
          <Image source={require('./image/android.png')}
        style={{width:'40%' ,height: 100}} />
        <Image source={require('./image/iphone.png')}
        style={{marginLeft:40,width:'40%' ,height: 100}} />
         <View style={{flex:1, flexDirection:'row'}}>
-            <Text style={{fontSize:10}}>회원가입</Text>
+            <Text style={{fontSize:5}}>회원가입</Text>
             <Text style={{marginLeft:5,fontSize:10}}>아이디/비밀번호 찾기</Text>
         </View>
           </View>
