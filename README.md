@@ -3,15 +3,19 @@
 
 ## error 일어날시 node_modules -> src ->defaults ->blacklist.js의 내용  변경(아래와 같이)
 
-var sharedBlacklist = [  /node_modules[\/\\]react[\/\\]dist[\/\\].*/,
+<code>
+var sharedBlacklist = [
 
-  /website\/node_modules\/.*/,
+/node_modules[\/\\]react[\/\\]dist[\/\\].*/,
 
-  /heapCapture\/bundle\.js/,
+/website\/node_modules\/.*/,
 
-  /.*\/__tests__\/.*/
+/heapCapture\/bundle\.js/,
+
+/.*\/__tests__\/.*/ 
 
 ];
+</code>
 
 ## 그 후 ./gradlew clean 실행 in root folder
 
@@ -57,6 +61,8 @@ name="junseong"
 - 항상 constructor실행후에 render() 실행 JSX를 붙이는 과정을 mount라고함. component가 mount된이후에는 componentDidMount()실행. 간단한 componentDidMount() 예제는 https://velog.io/@odini/Rendering-Elements 참고
 
 - state는 특정 고정값이 아닌 계속변하는값. props는 변경이 불가능한값. 지속적인 변화가 필요할시에 state를쓰자.
+-class만이 state를 다룰 수 있음.
+- LinearGradient https://docs.expo.io/versions/v34.0.0/sdk/linear-gradient/
 
 
 

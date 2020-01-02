@@ -2,19 +2,22 @@ import React from 'react';
 import { StyleSheet, Text, View ,Dimensions,TouchableOpacity} from 'react-native';
 import {AntDesign} from "@expo/vector-icons";
 
-export default function Listitem() {
+export default function Listitem({name}) {
   return (
     <View style={styles.listitembox}>
+        <View style={styles.makerow}>
         <TouchableOpacity>
-        <AntDesign name="checkcircle" size={20}/>
+        <AntDesign name="checkcircle" size={20} style={styles.checkmargin}/>
 
         </TouchableOpacity>
-      <Text style={styles.textitem}>목록 아이템1</Text>
+      <Text style={styles.textitem}>{name}</Text>
+    </View>
       <TouchableOpacity>
         <AntDesign name="close" size={20}/>
 
         </TouchableOpacity>
     </View>
+   
   );
 }
 const {width,height}=Dimensions.get('window')
@@ -33,6 +36,12 @@ const styles = StyleSheet.create({
         fontSize:20,
         fontWeight:'bold',
 
-    }
-
+    },
+    makerow:{
+        flexDirection:"row",
+        
+    },
+    checkmargin:{
+        marginRight:10,
+    },
   });
