@@ -3,19 +3,20 @@
 
 ## error 일어날시 node_modules -> src ->defaults ->blacklist.js의 내용  변경(아래와 같이)
 
-<code>
-var sharedBlacklist = [
 
-/node_modules[\/\\]react[\/\\]dist[\/\\].*/,
+<code>var sharedBlacklist = [ </code>
 
-/website\/node_modules\/.*/,
+<code>/node_modules[\/\\]react[\/\\]dist[\/\\].*/,</code>
 
-/heapCapture\/bundle\.js/,
+<code>/website\/node_modules\/.*/,</code>
 
-/.*\/__tests__\/.*/ 
+<code>/heapCapture\/bundle\.js/,</code>
 
-];
-</code>
+<code>/.*\/__tests__\/.*/</code> 
+
+<code>];</code>
+
+
 
 ## 그 후 ./gradlew clean 실행 in root folder
 
