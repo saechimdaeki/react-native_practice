@@ -1,9 +1,10 @@
 # react-native_practice
 #### 2020년 1학기 react-native관련 인턴을 하게되어서 react-native, expo.io를  처음 시작해보는 저장소입니다 
+- 개발할때 유용한 배경색 https://uigradients.com/#Sylvia
 
 ## error 일어날시 node_modules -> src ->defaults ->blacklist.js의 내용  변경(아래와 같이)
 
-- 개발할때 유용한 배경색 https://uigradients.com/#Sylvia
+
 
 <code>var sharedBlacklist = [ </code>
 
