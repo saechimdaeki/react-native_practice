@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import WEATHER from './app/weather';
+import WEATHER from './app/Weather';
 
 const API_KEY="637ece8e9acd7936fbcef19ee8215dd5"
 const API_KEY2="4716c24d34633a1fb730d59f9519d65e";

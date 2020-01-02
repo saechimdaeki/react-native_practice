@@ -3,6 +3,7 @@
 
 ## error 일어날시 node_modules -> src ->defaults ->blacklist.js의 내용  변경(아래와 같이)
 
+- 개발할때 유용한 배경색 https://uigradients.com/#Sylvia
 
 <code>var sharedBlacklist = [ </code>
 
