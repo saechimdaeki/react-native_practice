@@ -23,8 +23,9 @@
 
 ## 그 후 ./gradlew clean 실행 in root folder
 
-### unable to load script. make sure you're either running a metro server error occur: react-native start -> ctrl+c -> npx react-native run-android  
+### unable to load script. make sure you're either running a metro server error occur: Resolve method is react-native start -> ctrl+c -> npx react-native run-android  
 
+## Task :app:transformNativeLibsWithMergeJniLibsForDebug FAILED : Resolve method is    cd android-> ./gradlew clean -> cd .. ->npx react-native run- android 
 
 ### 잊으면 안되는 간단한 react StudyNote 📖
 - react-native란 javaScript로 어플리케이션을 만들수 있는 프레임워크
@@ -71,7 +72,7 @@ name="junseong"
 
 
 - navigator https://reactnavigation.org/
-
+- react-native 6.0이상부터는 gesture-handler link 안해도됨.
 
 
 
