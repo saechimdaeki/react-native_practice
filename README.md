@@ -1,8 +1,10 @@
 # react-native_practice
-#### 2020년 1학기 react-native관련 인턴을 하게되어서 react-native, expo.io를  처음 시작해보는 저장소입니다 
+#### 웹에 아예관심 없던 제가react-native를 시작하게되어서  react-native, expo.io를  처음 시작해보는 저장소입니다 
 - 개발할때 유용한 배경색 https://uigradients.com/#Sylvia
 
-## error 일어날시 node_modules -> src ->defaults ->blacklist.js의 내용  변경(아래와 같이)
+>자주 발생 하는 오류 해결 방법================================================
+
+error 일어날시 node_modules -> src ->defaults ->blacklist.js의 내용  변경(아래와 같이)
 
 
 
@@ -26,6 +28,8 @@
 ### unable to load script. make sure you're either running a metro server error occur: Resolve method is react-native start -> ctrl+c -> npx react-native run-android  
 
 ## Task :app:transformNativeLibsWithMergeJniLibsForDebug FAILED : Resolve method is    cd android-> ./gradlew clean -> cd .. ->npx react-native run- android 
+
+>========================================================================
 
 ### 잊으면 안되는 간단한 react StudyNote 📖
 - react-native란 javaScript로 어플리케이션을 만들수 있는 프레임워크
@@ -73,6 +77,7 @@ name="junseong"
 
 - navigator https://reactnavigation.org/
 - react-native 6.0이상부터는 gesture-handler link 안해도됨.
+- 순수 react-native vectorIcon https://github.com/oblador/react-native-vector-icons
 
 
 

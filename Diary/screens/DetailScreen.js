@@ -5,7 +5,7 @@ import {SafeAreaView} from 'react-navigation';
 export default function DetailScreen() {
     return (
         <SafeAreaView style= {styles.container}>
-                <Text>DetailScrrrrrrreen</Text>
+                <Text style={styles.textst}>DetailScrrrrrrreen</Text>
 
         </SafeAreaView>
 
@@ -15,8 +15,12 @@ export default function DetailScreen() {
 const styles= StyleSheet.create({
     container:{
         flex:1,
-        backgroundColor:'#fff',
+        backgroundColor:'blue',
         alignItems:'center',
         justifyContent:'center',
+    },
+    textst:{
+        fontSize:20,
+        fontWeight:"bold",
     },
 })
