@@ -18,10 +18,12 @@
 
 <code>];</code>
 
+- 자세한 링크 https://stackoverflow.com/questions/58120990/how-to-resolve-the-error-on-react-native-start
 
 
 ## 그 후 ./gradlew clean 실행 in root folder
 
+### unable to load script. make sure you're either running a metro server error occur: react-native start -> ctrl+c -> npx react-native run-android  
 
 
 ### 잊으면 안되는 간단한 react StudyNote 📖
@@ -68,7 +70,7 @@ name="junseong"
 - LinearGradient https://docs.expo.io/versions/v34.0.0/sdk/linear-gradient/
 
 
-
+- navigator https://reactnavigation.org/
 
 
 
