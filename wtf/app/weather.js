@@ -3,11 +3,13 @@ import { StyleSheet, Text, View } from 'react-native';
 import {LinearGradient} from 'expo-linear-gradient';
 import {Ionicons,Feather} from '@expo/vector-icons';
 
+
 const weather ={
   Sunny: {
     icon:'sun',
     colors:['#F37335','#FDC830'],
   },
+  
   Mist: {
     icon:'md-sunny',
     colors:['#4c669f','#3b5998'],
@@ -37,11 +39,13 @@ const weather ={
 
 
 export default function Weather({temp,title}) {
- 
+
+    
+  
    
   
   return (
-    
+    //console.log(weather),
     <LinearGradient
           colors={weather[title].colors}
           style={styles.weatherback}>
@@ -53,6 +57,7 @@ export default function Weather({temp,title}) {
             <View style={styles.textarea}>
             <Text style={styles.textcustom} >
               {title}
+              
             </Text>
             <Text style={styles.textcustom} >
               {temp}°C 
