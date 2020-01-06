@@ -3,7 +3,11 @@
 - 개발할때 유용한 배경색 https://uigradients.com/#Sylvia
 - react-native tutorial https://www.youtube.com/channel/UCJUmE61LxhbhudzUugHL2wQ
 
->자주 발생 하는 오류 해결 방법================================================
+- navigation 사용할때 미칠듯이 번거로운것 : 
+>  npm install --save react-navigation
+>  npm install --save react-native-gesture-handler
+
+>자주 발생 하는 오류 해결 방법===============================================
 
 error 일어날시 node_modules -> src ->defaults ->blacklist.js의 내용  변경(아래와 같이)
 
