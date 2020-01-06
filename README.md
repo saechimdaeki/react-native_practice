@@ -1,6 +1,7 @@
 # react-native_practice
 #### 웹에 아예관심 없던 제가react-native를 시작하게되어서  react-native, expo.io를  처음 시작해보는 저장소입니다 
 - 개발할때 유용한 배경색 https://uigradients.com/#Sylvia
+- react-native tutorial https://www.youtube.com/channel/UCJUmE61LxhbhudzUugHL2wQ
 
 >자주 발생 하는 오류 해결 방법================================================
 
