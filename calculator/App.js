@@ -1,58 +1,95 @@
 import React, {Component } from 'react';
-import {StyleSheet, Text,View, Button } from 'react-native';
+import {StyleSheet, Text,View, Button, TouchableOpacity } from 'react-native';
 
 export default class App extends Component {
   constructor() {
     super()
-    this.state={}
+    this.state={
+      resultText:""
+    }
+    this.operation =['D','+','-','*','/']
+
   }
   
+  calculateResult() {
+    const text=this.state.resultText
+    //parse ! 
+  }
+
+  buttonPressed(text){
+   // console.log(text)
+    if(text =='=') {
+
+      return calculateResult(this.state.resultText)
+    }
+
+    this.setState({
+      resultText:this.state.resultText+text
+    })
+  }
+  operate(operation) {
+    switch(operation) {
+      case 'D':
+        //console.log(this.state.resultText)
+          const text=this.state.resultText.split('')
+          text.pop()
+          text.join('')
+          this.setState({
+            resultText:text.join('')
+          })
+          break
+      case '+':
+      case '-':
+      case '*':
+      case '/':
+        const lastchar=this.state.resultText.split('').pop()
+
+        if(this.operation.indexOf(lastchar) >0) return 
+        if(this.state.text=="") return 
+        this.setState({
+          resultText:this.state.resultText+operation
+        })
+        
+    }
+  }
+
   render() {
+    let elems=[]
+    let nums=[[1,2,3],[4,5,6],[7,8,9],['.',0,'=']]
+    for (let i=0; i<4; i++) {
+      let row=[]
+      for(let j=0; j<3; j++ ) {
+        row.push( <TouchableOpacity onPress={()=>this.buttonPressed(nums[i][j])} style={styles.btn}>
+      <Text style={styles.btntext}>{nums[i][j]}</Text>
+        </TouchableOpacity >)
+      }
+      elems.push(<View style={styles.rows}>{row}</View>)
+    }
+    let ops=[]
+    for(let i=0; i<5; i++){
+      ops.push(<TouchableOpacity style={styles.btn} onPress={()=> this.operate(this.operation[i])}>
+        <Text style={[styles.btntext,styles.white]}>{this.operation[i]}</Text>  
+          </TouchableOpacity >)
+    }
     return (
       <View style={styles.container}>
         <View style={styles.result}>
-            <Text style={styles.resultText}>11*11</Text>
+            <Text style={styles.resultText}>
+              {this.state.resultText}
+            </Text>
         </View>
         <View style={styles.calculation}>
           <Text style={styles.calculationText}>121</Text>  
         </View> 
         <View style={styles.buttons}>
           <View style={styles.numbers}>
-            <View style={styles.rows}>
-              <Button title="0"/>
-              <Button title="0"/>
-              <Button title="0"/>
-
-            </View>
-            <View style={styles.rows}>
-              <Button title="0"/>
-              <Button title="0"/>
-              <Button title="0"/>
-
-            </View>
-            <View style={styles.rows}>
-              <Button title="0"/>
-              <Button title="0"/>
-              <Button title="0"/>
-
-            </View>
-            <View style={styles.rows}>
-              <Button title="0"/>
-              <Button title="0"/>
-              <Button title="0"/>
-
-            </View>
-
+            {elems}
           </View>
           <View style={styles.operation}>
-              <Button title="+"/>
-              <Button title="+"/>
-              <Button title="+"/>
-              <Button title="+"/>
-              </View>
+              {ops}
+            </View>
         </View>    
       </View>
-      
     );
   } 
 }
@@ -76,6 +113,16 @@ const styles=StyleSheet.create({
     justifyContent:"space-around",
     alignItems:'center',
   },
+  btn:{
+    flex:1,
+    alignItems:"center",
+    alignSelf:'stretch',
+    justifyContent:'center',
+
+  },
+  btntext:{
+    fontSize:30
+  },  
   result:{
     flex:2,
     backgroundColor:'red',
@@ -102,9 +149,10 @@ const styles=StyleSheet.create({
     alignItems:'stretch',
     backgroundColor:'black'
   },
-  row:{
-
+  white:{
+    color:'white'
   },
+ 
 
 
 })
