@@ -1,4 +1,4 @@
-package com.calculator;
+package com.junseong.calculator;
 
 import com.facebook.react.ReactActivity;
 

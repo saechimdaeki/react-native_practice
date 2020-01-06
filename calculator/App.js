@@ -5,31 +5,52 @@ export default class App extends Component {
   constructor() {
     super()
     this.state={
-      resultText:""
+      resultText:"",
+      calculationText:""
     }
-    this.operation =['D','+','-','*','/']
-
+    this.operation =['Del','+','-','*','/']
   }
-  
   calculateResult() {
     const text=this.state.resultText
+    //console.log(text)
+    console.log(text,eval(text))
+    this.setState({
+      calculationText:eval(text)
+    })
     //parse ! 
+    /*
+    text.split('').forEach(char => {
+      if(char == '+'|| char=='*'){
+        //todo
+      }
+    })
+    */
+    //eval(text)
   }
-
+  validate() {
+    const text = this.state.resultText
+    //if(text.slice(-1) == '+')
+    switch(text.slice(-1)){
+      case '+':
+      case '-':
+      case '*':
+      case '/':
+        return false
+    }
+    return true
+  }
   buttonPressed(text){
    // console.log(text)
     if(text =='=') {
-
-      return calculateResult(this.state.resultText)
+      return  this.validate() &&this.calculateResult()
     }
-
     this.setState({
       resultText:this.state.resultText+text
     })
   }
   operate(operation) {
     switch(operation) {
-      case 'D':
+      case 'Del':
         //console.log(this.state.resultText)
           const text=this.state.resultText.split('')
           text.pop()
@@ -52,22 +73,21 @@ export default class App extends Component {
         
     }
   }
-
   render() {
     let elems=[]
     let nums=[[1,2,3],[4,5,6],[7,8,9],['.',0,'=']]
     for (let i=0; i<4; i++) {
       let row=[]
       for(let j=0; j<3; j++ ) {
-        row.push( <TouchableOpacity onPress={()=>this.buttonPressed(nums[i][j])} style={styles.btn}>
+        row.push( <TouchableOpacity key={nums[i][j]} onPress={()=>this.buttonPressed(nums[i][j])} style={styles.btn}>
       <Text style={styles.btntext}>{nums[i][j]}</Text>
         </TouchableOpacity >)
       }
-      elems.push(<View style={styles.rows}>{row}</View>)
+      elems.push(<View key={i} style={styles.rows}>{row}</View>)
     }
     let ops=[]
     for(let i=0; i<5; i++){
-      ops.push(<TouchableOpacity style={styles.btn} onPress={()=> this.operate(this.operation[i])}>
+      ops.push(<TouchableOpacity key ={this.operation[i]} style={styles.btn} onPress={()=> this.operate(this.operation[i])}>
         <Text style={[styles.btntext,styles.white]}>{this.operation[i]}</Text>  
           </TouchableOpacity >)
     }
@@ -79,7 +99,10 @@ export default class App extends Component {
             </Text>
         </View>
         <View style={styles.calculation}>
-          <Text style={styles.calculationText}>121</Text>  
+          <Text style={styles.calculationText}>
+
+           {this.state.calculationText}
+            </Text>  
         </View> 
         <View style={styles.buttons}>
           <View style={styles.numbers}>
@@ -93,19 +116,18 @@ export default class App extends Component {
     );
   } 
 }
-
 const styles=StyleSheet.create({
   container:{
     flex:1,
   },
   resultText:{
     fontSize:30,
-    color:'white',
-
+    color:'black',
+    fontWeight:'bold'
   },
   calculationText:{
     fontSize:24,
-    color:'white',
+    color:'black',
   },
   rows:{
     flexDirection:'row',
@@ -118,20 +140,21 @@ const styles=StyleSheet.create({
     alignItems:"center",
     alignSelf:'stretch',
     justifyContent:'center',
-
   },
   btntext:{
-    fontSize:30
+    fontSize:30,
+    color:'white',
+
   },  
   result:{
     flex:2,
-    backgroundColor:'red',
+    backgroundColor:'white',
     justifyContent:'center',
     alignItems:'flex-end'
   },
   calculation:{
     flex:1,
-    backgroundColor:'green',
+    backgroundColor:'white',
     justifyContent:'center',
     alignItems:'flex-end'
   },
@@ -141,13 +164,13 @@ const styles=StyleSheet.create({
   },
   numbers:{
     flex:3,
-    backgroundColor:'yellow',
+    backgroundColor:'#434343',
   },
   operation:{
     flex:1,
     justifyContent:'space-around',
     alignItems:'stretch',
-    backgroundColor:'black'
+    backgroundColor:'#636363'
   },
   white:{
     color:'white'

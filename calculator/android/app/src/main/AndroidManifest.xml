@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-  package="com.calculator">
+  package="com.junseong.calculator">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
