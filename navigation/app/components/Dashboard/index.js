@@ -4,9 +4,9 @@ import {View,TextInput,Text} from 'react-native';
 class Dashboard extends Component {
     render(){
         return(
-            <View>
+            <View style={{alignSelf:'center'}}>
                 <Text>
-                Dashboard
+                    여기를 더해나아가야함 
                 </Text>
                 
             </View>

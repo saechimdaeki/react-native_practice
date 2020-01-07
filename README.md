@@ -7,6 +7,7 @@
 >  npm install --save react-navigation
 >  npm install --save react-native-gesture-handler
 
+
 >자주 발생 하는 오류 해결 방법===============================================
 
 error 일어날시 node_modules -> src ->defaults ->blacklist.js의 내용  변경(아래와 같이)
@@ -27,14 +28,22 @@ error 일어날시 node_modules -> src ->defaults ->blacklist.js의 내용  변�
 
 - 자세한 링크 https://stackoverflow.com/questions/58120990/how-to-resolve-the-error-on-react-native-start
 
+<code>그 후 ./gradlew clean 실행 in root folder </code> 
 
-## 그 후 ./gradlew clean 실행 in root folder
+### unable to load script. make sure you're either running a metro server error occur: Resolve method is react-native start -> ctrl+c -> npx react-native run-android 이 과정에서 react-native start명령어가 error가 일어날경우 blacklist.js재수정   
 
-### unable to load script. make sure you're either running a metro server error occur: Resolve method is react-native start -> ctrl+c -> npx react-native run-android  
+## Task :app:transformNativeLibsWithMergeJniLibsForDebug FAILED : Resolve method is    cd android-> ./gradlew clean -> cd .. ->npx react-native run- android  
 
-## Task :app:transformNativeLibsWithMergeJniLibsForDebug FAILED : Resolve method is    cd android-> ./gradlew clean -> cd .. ->npx react-native run- android 
+#### 위의 오류들이 이 한line으로 해결되지않을시에 다시 blacklist.js부터 시작하면 됨. (보통 yarn add 로 새로운 module을 더해갈때 오류가나는경우가 가끔있는데 항상이렇게 해결됨)
 
->========================================================================
+### unable to resolve module 'react-native-vector-icons/FontAwesome'오류 일어날시 -> yarn add react-native-vector-icons and then reset packager cache with react-native start --reset-cache
+
+
+## react-native icon들이 엑박뜰경우  android/app/build.gradle 폴더에 들어가 
+ <code> apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"   추가 </code>
+
+
+> ========================================================================
 
 ### 잊으면 안되는 간단한 react StudyNote 📖
 - react-native란 javaScript로 어플리케이션을 만들수 있는 프레임워크

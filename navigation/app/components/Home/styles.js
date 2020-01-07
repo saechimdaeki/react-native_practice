@@ -3,7 +3,7 @@ import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
     heading:{
-        fontSize:25,
+        fontSize:20,
         textAlign:'center',
     },
     input:{
@@ -14,11 +14,42 @@ export default StyleSheet.create({
         
     },
     parent:{
-        flex:1,
-        justifyContent:'center',  
+       // flex:1,
+       // justifyContent:'center',  
     },
     buttons:{
         marginLeft:10,
         marginRight:10,
+    },
+    imgs: {
+        marginTop:10,
+        alignItems:'center',
+        justifyContent:'center',
+        alignContent:'center',
+        alignSelf:"center",
+        
+        
+        
+    },
+    white:{
+       
+        backgroundColor:'white',
+    },
+    gray:{
+       // flex:1,
+        backgroundColor:'grey'
+    },
+    rowf:{
+        flexDirection:'row',
+        alignContent:'center',
+        justifyContent:'center',
+       // flexDirection:'column',
+    },  
+    center:{
+        textAlign:'center',
+    },
+    spaceleft:{
+        marginLeft:20,
     }
+  
 })
