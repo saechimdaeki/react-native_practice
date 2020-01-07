@@ -1,32 +1,18 @@
 import React, { Component } from 'react'
 import { Text, View , Button } from 'react-native'
-import { createStackNavigator , createAppContainer } from "react-navigation";
+import {   createAppContainer } from "react-navigation";
+import {createStackNavigator} from 'react-navigation-stack';
+import Home from './app/components/Home';
+import Dashboard from './app/components/Dashboard';
 
-class HomeScreen extends Component {
-    render() {
-        return (
-            <View>
-                <Text> This is Home Component</Text>
-                <Button onPress={() => this.props.navigation.navigate('test')} title='Test Page'></Button>
-            </View>
-        )
-    }
-}
 
-class Test extends Component {
-    render() {
-        return (
-            <View>
-                <Text> This is Test Component</Text>
-                <Button onPress={() => this.props.navigation.navigate('home')} title='Home App'></Button>
-            </View>
-        )
-    }
-}
+
+
 const RooStack = createStackNavigator(
     {
-        home: HomeScreen,
-        test: Test,
+        home: Home,
+        dashboard:Dashboard,
+       // test: Test,
     },
     {
         initialRouteName : 'home'
@@ -40,3 +26,4 @@ export default class App extends Component {
         )
     }
 }
+
