@@ -7,7 +7,7 @@ import { TouchableOpacity } from 'react-native';
 const khubpc="https://khub.jbnu.ac.kr/index.jsp?from=mweb"
 const khuburl="https://play.google.com/store/apps/details?id=kr.ktech.jbnuhub"
 const khuburlapple="https://apps.apple.com/kr/app/id1233032167"
-const idpassword="http://all.jbnu.ac.kr/PswrdSrch.html"
+const idpassword="https://all.jbnu.ac.kr/PswrdSrch.html"
  
 
 const openURL = (url) => {
@@ -60,7 +60,7 @@ class Home extends React.Component {
                         회원가입
                     </Text>
                 </TouchableOpacity>    
-                <TouchableOpacity style={rowf} onPress={()=>this.openURL(idpassword)}>
+                <TouchableOpacity style={rowf} onPress={()=>openURL(idpassword)}>
                     <Text style={spaceleft}>
                         아이디/비밀번호 찾기
                     </Text>
