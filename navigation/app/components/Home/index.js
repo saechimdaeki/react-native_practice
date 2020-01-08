@@ -4,8 +4,8 @@ import styles from './styles'
 import { CheckBox } from 'react-native-elements'
 import { TouchableOpacity } from 'react-native';
 
-class Home extends Component {
-
+class Home extends React.Component {
+   
     state={username:"",password:""}
     checkLogin(){
         const{username,password}=this.state
