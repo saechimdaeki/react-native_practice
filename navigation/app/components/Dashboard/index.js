@@ -1,5 +1,9 @@
 import React, {Component} from 'react';
 import {View,TextInput,Text} from 'react-native';
+import {HeaderButton,HeaderButtons,Item} from 'react-navigation-header-buttons';
+
+
+
 
 class Dashboard extends Component {
     render(){

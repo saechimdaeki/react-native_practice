@@ -32,12 +32,14 @@ export default StyleSheet.create({
         
     },
     white:{
-       
+        //height:'80%',
         backgroundColor:'white',
     },
     gray:{
-       // flex:1,
-        backgroundColor:'grey'
+        flex:1,
+        
+        backgroundColor:'grey',
+        flexDirection:'row',
     },
     rowf:{
         flexDirection:'row',
@@ -50,6 +52,23 @@ export default StyleSheet.create({
     },
     spaceleft:{
         marginLeft:20,
-    }
+    },
+    bottomimg:{
+        backgroundColor:'white',
+        //alignItems:'flex-end',
+        flexDirection:'row'
+    },
+    graytext:{
+        
+        justifyContent:'center',
+        textAlign:'center'
+    },
+    grayview:{
+        marginTop:5,
+        //flexDirection:'column-re'
+    },
+    grayleft:{
+        marginLeft: 15
+    },
   
 })

@@ -19,7 +19,7 @@ const RooStack = createStackNavigator(
         initialRouteName : 'home',
         headerMode:'none',
         navigationOptions:{
-            headershown:false,
+        headershown:false,
         }
     }
 )
