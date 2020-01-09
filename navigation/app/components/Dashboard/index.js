@@ -49,6 +49,10 @@ class Dashboard extends React.Component {
         this.props.navigation.navigate('additional')
         this.toggleModal()
     }
+    gonotice(){
+        this.props.navigation.navigate('notice')
+        this.toggleModal()
+    }
     state = {
         isModalVisible: false,
         refreshing:false,
@@ -86,7 +90,7 @@ class Dashboard extends React.Component {
                     <TouchableWithoutFeedback onPress={_=>this.gosetting()}>
                         <Text style={styles.modalitem}>설정</Text>
                     </TouchableWithoutFeedback>
-                    <TouchableWithoutFeedback onPress={() => {Alert.alert('공지사항')}}>
+                    <TouchableWithoutFeedback onPress={_=>this.gonotice()}>
                         <Text style={styles.modalitem}>공지사항</Text>
                     </TouchableWithoutFeedback>
                     <TouchableWithoutFeedback onPress={() => {Alert.alert('내 강의대화 보기')}}>

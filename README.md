@@ -1,5 +1,6 @@
 # react-native_practice
 #### 웹에 아예관심 없던 제가react-native를 시작하게되어서  react-native, expo.io를  처음 시작해보는 저장소입니다 
+- 용량부족으로 더이상 참고하지 않거나 안쓰는프로젝트는 다음commit에삭제하는 방향
 - 개발할때 유용한 배경색 https://uigradients.com/#Sylvia
 - style입힐때 색깔 https://facebook.github.io/react-native/docs/colors
 - react-native tutorial https://www.youtube.com/channel/UCJUmE61LxhbhudzUugHL2wQ
@@ -96,7 +97,7 @@ name="junseong"
 
 - navigator https://reactnavigation.org/
 - react-native 6.0이상부터는 gesture-handler link 안해도됨.
--  react-native vectorIcon https://github.com/oblador/react-native-vector-icons
+-  react-native vectorIcon https://oblador.github.io/react-native-vector-icons/
 - react-native modal https://github.com/react-native-community/react-native-modal
 
 
