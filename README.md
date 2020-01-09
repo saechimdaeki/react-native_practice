@@ -6,26 +6,29 @@
 
 - navigation 사용할때 미칠듯이 번거로운것 : 
 >  npm install --save react-navigation
+
 >  npm install --save react-native-gesture-handler
 
 
->자주 발생 하는 오류 해결 방법===============================================
+## 자주 발생 하는 오류 해결 방법===============================================
 
 error 일어날시 node_modules -> src ->defaults ->blacklist.js의 내용  변경(아래와 같이)
 
 
 
-<code>var sharedBlacklist = [ </code>
+<code>
+  var sharedBlacklist = [
 
-<code>/node_modules[\/\\]react[\/\\]dist[\/\\].*/,</code>
+  /node_modules[\/\\]react[\/\\]dist[\/\\].*/,
 
-<code>/website\/node_modules\/.*/,</code>
+  /website\/node_modules\/.*/,
 
-<code>/heapCapture\/bundle\.js/,</code>
+  /heapCapture\/bundle\.js/,
 
-<code>/.*\/__tests__\/.*/</code> 
-
-<code>];</code>
+  /.*\/__tests__\/.*/
+  
+];
+</code>
 
 - 자세한 링크 https://stackoverflow.com/questions/58120990/how-to-resolve-the-error-on-react-native-start
 
@@ -43,8 +46,9 @@ error 일어날시 node_modules -> src ->defaults ->blacklist.js의 내용  변�
 ## react-native icon들이 엑박뜰경우  android/app/build.gradle 폴더에 들어가 
  <code> apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"   추가 </code>
 
+## module 설치후 import까지 했는데도 unable to resolve module 'something'이 뜰경우 react-native start --reset-cache
 
-> ========================================================================
+##  ========================================================================
 
 ### 잊으면 안되는 간단한 react StudyNote 📖
 - react-native란 javaScript로 어플리케이션을 만들수 있는 프레임워크
@@ -92,7 +96,8 @@ name="junseong"
 
 - navigator https://reactnavigation.org/
 - react-native 6.0이상부터는 gesture-handler link 안해도됨.
-- 순수 react-native vectorIcon https://github.com/oblador/react-native-vector-icons
+-  react-native vectorIcon https://github.com/oblador/react-native-vector-icons
+- react-native modal https://github.com/react-native-community/react-native-modal
 
 
 
