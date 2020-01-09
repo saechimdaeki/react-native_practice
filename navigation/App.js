@@ -4,7 +4,7 @@ import {   createAppContainer } from "react-navigation";
 import {createStackNavigator, HeaderTitle} from 'react-navigation-stack';
 import Home from './app/components/Home';
 import Dashboard from './app/components/Dashboard';
-
+import Additional from './app/components/addtional';
 
 
 
@@ -14,6 +14,7 @@ const RooStack = createStackNavigator(
        
         dashboard:Dashboard,
        // test: Test,
+       additional:Additional,
     },
     {
         initialRouteName : 'home',
