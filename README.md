@@ -4,7 +4,7 @@
 - 개발할때 유용한 배경색 https://uigradients.com/#Sylvia
 - style입힐때 색깔 https://facebook.github.io/react-native/docs/colors
 - react-native tutorial https://www.youtube.com/channel/UCJUmE61LxhbhudzUugHL2wQ
-
+- React Native FlatList Example - Fetching Data from Server ( https://www.youtube.com/watch?v=3oySgymEdqI )
 - navigation 사용할때 미칠듯이 번거로운것 : 
 >  npm install --save react-navigation
 
