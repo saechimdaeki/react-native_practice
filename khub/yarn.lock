@@ -5464,6 +5464,11 @@ react-native-gesture-handler@^1.5.3:
     invariant "^2.2.4"
     prop-types "^15.7.2"
 
+react-native-image-picker@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/react-native-image-picker/-/react-native-image-picker-1.1.0.tgz#c2a0523886edb4cf2cdc008ad0a71433142a4d53"
+  integrity sha512-/KjHf4NNAjl6XM7FQuqvGDz1wB9sRdLf86+2yksLW/QTRR7CitX4TLCM8ZF9CX6Y0MsCTndkZia3zWE+nt/GiA==
+
 react-native-iphone-x-helper@^1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/react-native-iphone-x-helper/-/react-native-iphone-x-helper-1.2.1.tgz#645e2ffbbb49e80844bb4cbbe34a126fda1e6772"
@@ -5498,6 +5503,11 @@ react-native-ratings@^6.3.0:
   dependencies:
     lodash "^4.17.4"
     prop-types "^15.5.10"
+
+react-native-reanimated@^1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/react-native-reanimated/-/react-native-reanimated-1.4.0.tgz#7f1acbf9be08492d834f512700570978052be2f9"
+  integrity sha512-tO7nSNNP+iRLVbkcSS5GXyDBb7tSI02+XuRL3/S39EAr35rnvUy2JfeLUQG+fWSObJjnMVhasUDEUwlENk8IXw==
 
 react-native-root-siblings@^3.2.2:
   version "3.2.3"
@@ -5589,10 +5599,10 @@ react-navigation-header-buttons@^3.0.4:
   dependencies:
     react-native-platform-touchable "^1.1.1"
 
-react-navigation-stack@^2.0.10:
-  version "2.0.10"
-  resolved "https://registry.yarnpkg.com/react-navigation-stack/-/react-navigation-stack-2.0.10.tgz#4a4f76f58a7addcc247fb6ce8127c224e6096252"
-  integrity sha512-WRXyujWzGA1st3uLfznC2jvk2QhD1j1k1V9SqHMl6VBrGj0pVpvIQ6wGDowKau/XY8gpEOjPkonCASCFBkXhtg==
+react-navigation-stack@^2.0.13:
+  version "2.0.13"
+  resolved "https://registry.yarnpkg.com/react-navigation-stack/-/react-navigation-stack-2.0.13.tgz#fa3ce5a2c3ce1d504e936f81575d0b8efdc77e2f"
+  integrity sha512-LRMq2Chwu3yMXVunTV1rYTM/kXV/Vmro8qa0aVTU8zNrgUKrI/tI5dTBmMG5naoNLuZWzMWWJ0bzY+vtZ9dM5g==
   dependencies:
     color "^3.1.2"
     react-native-iphone-x-helper "^1.2.1"

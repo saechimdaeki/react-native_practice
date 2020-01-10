@@ -6,8 +6,17 @@ import Modal from "react-native-modal";
 import { ListItem } from 'react-native-elements';
 import { Dimensions } from 'react-native'
 import Home from '../Home/index'
+import ImagePicker from 'react-native-image-picker';
 
+const khubpc="https://khub.jbnu.ac.kr/index.jsp?from=mweb"
+const khuburl="https://play.google.com/store/apps/details?id=kr.ktech.jbnuhub"
+const khuburlapple="https://apps.apple.com/kr/app/id1233032167"
+const idpassword="https://all.jbnu.ac.kr/PswrdSrch.html"
+ 
 
+const openURL = (url) => {
+    Linking.openURL(url).catch((err) => console.error('An error occurred', err));
+  }
 
 
 let deviceWidth = Dimensions.get('window').width
@@ -27,21 +36,36 @@ const flatListData = [
 
 const searchurl="https://khub.jbnu.ac.kr/mobile/web/app/#/group/search"
 
-const openURL = (url) => {
-    Linking.openURL(url).catch((err) => console.error('An error occurred', err));
-  }
-  class FlatListItem extends Component{
-    render() {
-        return(
-          <View style ={{flex:1,marginRight: 30,justifyContent: 'center', alignItems: 'center'}}>
-              <Image source={{uri:this.props.item.imageUrl ,width : deviceWidth/2 , height: 100}}></Image>
-              <Text>{this.props.item.key}</Text>
-          </View>
-
-        );
-    }
-}
+var img1=0
+  
 class Dashboard extends React.Component {
+    state = {
+        isModalVisible: false,
+        refreshing:false,
+        page:1,
+        avatarSource:'../../../img/profile.png',
+        status:false,
+      };
+    selectImage = async() => {
+        ImagePicker.showImagePicker({nodata:true, mediaType:'photo'}, (response) => {
+            console.log('Response = ', response);
+          
+            if (response.didCancel) {
+              console.log('User cancelled image picker');
+            } else if (response.error) {
+              console.log('ImagePicker Error: ', response.error);
+            } else if (response.customButton) {
+              console.log('User tapped custom button: ', response.customButton);
+            } else {
+              const source = { uri: response.uri };
+              // You can also display the image using data:
+              // const source = { uri: 'data:image/jpeg;base64,' + response.data };
+              this.setState({
+                avatarSource: source,
+              });
+            }
+          });
+    }
     gotmp(){
         this.props.navigation.navigate('home')
     }
@@ -53,29 +77,46 @@ class Dashboard extends React.Component {
         this.props.navigation.navigate('notice')
         this.toggleModal()
     }
-    state = {
-        isModalVisible: false,
-        refreshing:false,
-        page:1,
-      };
+  
     
       toggleModal = () => {
         this.setState({ isModalVisible: !this.state.isModalVisible });
         
     };
+    handleChoosePhoto= () =>{
+        const options={
+            nodata:true,
+        };
+        ImagePicker.launchImageLibrary(options,response=>{
+            console.log("response", response)
+            if(response.uri) {
+                this.setState({photo:response})
+                this.togglestatus()
+            }
+        })
+    }
+    togglestatus(){
+        this.setState({
+            status:!this.state.status
+        });
+    }
+
     render(){
+        const {photo}=this.state;
         return(
+            <View style={{flex:10}}>
            <SafeAreaView>
-            
-            
-                <View style={{height:"8%",flexDirection:'row',backgroundColor:'#1f8dd6'}}>
+                <View style={{height:"7%",flexDirection:'row',backgroundColor:'#1f8dd6'}}>
                     <Text style={ styles.title}>
                         JBNUHub
                     </Text>
-                    
-                    <TouchableOpacity style={{marginLeft:100,marginTop:5}}> 
-                     <Image source={require('../../../img/profile.png')} style={{marginTop:5,borderRadius:400/2}}  />
+                    <TouchableOpacity style={{marginLeft:100,marginTop:5}} onPress={this.selectImage}> 
+                    <Image source={require('../../../img/profile.png')} style={{marginTop:5,borderRadius:400/2}}   />
+                     {
+                         this.state.avatarSource && <Image style={{width:28,height:28,resizeMode:'contain',borderRadius:400/2}}/>
+                     }
                     </TouchableOpacity>
+                    
                     <TouchableOpacity style={{marginLeft:20 ,marginTop:10}}>
                     <Icon name="ios-mail" size={28} color="white"/>
                     </TouchableOpacity>
@@ -103,10 +144,13 @@ class Dashboard extends React.Component {
                         <Text style={styles.modalitem}>즐겨찾기 관리</Text>
                     </TouchableWithoutFeedback>
                 </View>
+                
                             </Modal>
                 </View>
-                <View style={{marginTop:10}}>
+                
+                <View style={{marginTop:10,marginLeft:10}}>
                 <FlatList
+                            style={{marginBottom:150}}
                             data ={flatListData}
                             numColumns={2}
                            // initialNumToRender={8}
@@ -125,14 +169,11 @@ class Dashboard extends React.Component {
                         </TouchableWithoutFeedback>}
                             keyExtractor = {({item,index})=>item}
                     />
-                <View>
-                    <Text>
-                        dadasdad
-                    </Text>
-                </View>
                 </View>
                
             </SafeAreaView>
+            
+            </View>
         )
     }
 }

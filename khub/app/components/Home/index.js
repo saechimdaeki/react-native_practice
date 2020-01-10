@@ -70,7 +70,7 @@ class Home extends React.Component {
                     </View>
                 <View style={white}>
                     <View style={bottomimg}>
-                    <TouchableOpacity onPress={()=>openURL(khuburlapple)}>
+                    <TouchableOpacity onPress={()=>openURL(khuburlapple)}style={{marginTop:8}}>
                         <Image source={require('../../../img/apple.png')} style={imgs} />
                     </TouchableOpacity>
                     <TouchableOpacity onPress={()=>openURL(khuburl)}>
