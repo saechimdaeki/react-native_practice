@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import {Platform,SafeAreaView,View,Text,StyleSheet,TouchableWithoutFeedback,ToastAndroid, TouchableOpacity } from 'react-native';
+import {Platform,Image,SafeAreaView,View,Text,StyleSheet,TouchableWithoutFeedback,ToastAndroid, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { TextInput } from 'react-native-gesture-handler';
 import ImagePicker from 'react-native-image-picker';
