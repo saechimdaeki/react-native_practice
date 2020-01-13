@@ -3,24 +3,26 @@ import {View,Text,StyleSheet,TouchableWithoutFeedback} from 'react-native';
 
 const InfoButton = (props) => {
     const [color,setColor] = useState('#000');
-    const [tle,setTle] = useState(props.title);
-    const [subtle,setSubtle] = useState(props.subtitle);
+    const [tle,setTle] = useState('');
+    const [subtle,setSubtle] = useState('');
 
     useEffect(()=>{
         setColor(props.color);
-    })
+        setTle(props.title);
+        setSubtle(props.subtitle);
+    },[])
     return (
-        <View style={styles.container}>
-            <Text style={styles.title,{color:color}}>{tle}</Text>
-            <Text style={styles.subtitle,{color:color}}>{subtle}</Text>
-        </View>
+            <View style={styles.container}>
+                <Text style={styles.title,{color:color}}>{tle}</Text>
+                <Text style={styles.subtitle,{color:color}}>{subtle}</Text>
+            </View>
     )
 }
 
 const styles = StyleSheet.create({
     container:{
         width:'100%',
-        height:70,
+        height:60,
         padding:10,
         paddingHorizontal:15,
         backgroundColor:'#fff',
@@ -31,10 +33,10 @@ const styles = StyleSheet.create({
         borderColor:'#eee',
     },
     title:{
-        fontSize:18,
+        fontSize:16,
     },
     subtitle:{
-
+        fontSize:16,
     }
 })
 

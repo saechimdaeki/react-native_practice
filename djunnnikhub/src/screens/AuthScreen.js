@@ -1,25 +1,26 @@
 import React,{useState,useEffect} from 'react';
 import {SafeAreaView,View,Text,StyleSheet,Image,TextInput, Alert,TouchableOpacity,CheckBox} from 'react-native';
 
-import CustomButton from '../components/customButton';
+import LoginButton from '../components/LoginButton';
+import CustomStatusBar from '../components/customStatusBar';
 
 const AuthScreen = ({navigation})=> {
     const [id,setId] = useState('');
     const [pw,setPw] = useState('');
 
-    const handleLogin = () =>{
-          navigation.navigate('Main');
+    const _LoginHandle = () =>{
+          navigation.navigate('Home');
     }
 
     return (
         <SafeAreaView style={styles.container}>
+            <CustomStatusBar backgroundColor="#428ed0" />
             <Image source={require('../img/icon_kRounge_big.png')} style={styles.icon}/>
             <Text style={styles.welcome}>플립드 러닝을 위한 JBNU 강의포털</Text>
             <TextInput style={styles.textInput} onChangeText={(id)=>setId(id)} placeholder='아이디' autoCorrect={false}/>
             <TextInput style={styles.textInput} onChangeText={(pw)=>setPw(pw)} placeholder='비밀번호' autoCorrect={false} secureTextEntry={true}/>
             
-            <CustomButton onPress={handleLogin} title='로그인' titleColor='#fff' buttonColor='rgb(66,141,208)'/>
-           
+            <LoginButton onPress={()=>_LoginHandle} title='로그인' titleColor='#fff' buttonColor='rgb(66,141,208)'/>
             <View style={styles.footer}>
                 <TouchableOpacity onPress={()=>{Alert.alert('회원가입이 필요없습니다.\n전북대학교 학번/사번을 이용해주세요.')}}>
                     <Text>회원가입</Text>
