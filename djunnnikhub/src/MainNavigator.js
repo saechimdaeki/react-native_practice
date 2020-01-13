@@ -18,6 +18,8 @@ import NoticeScreen from './screens/notice/NoticeScreen';
 import PrefFavoriteScreen from './screens/pref/PrefFavoriteScreen';
 import PrefHiddenGroupScreen from './screens/pref/PrefHiddenGroupScreen';
 
+import writescreen from './screens/WriteScreen';
+
 import Animated, { Easing } from 'react-native-reanimated';
 
 const MainNavigator = createStackNavigator({
@@ -39,6 +41,10 @@ const MainNavigator = createStackNavigator({
     //pref
     PrefFavorite : {screen:PrefFavoriteScreen},
     PrefHiddenGroup : {screen:PrefHiddenGroupScreen},
+
+    //강의대화 글쓰기
+    writescreen:{screen:writescreen},
+
 },{
     initialRouteName : 'Auth',
     headerMode : 'none',

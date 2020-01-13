@@ -85,7 +85,9 @@ const LectureScreen = ({navigation,id}) => {
                 </View>
             </View>
             <View style={styles.content}>
+                <TouchableOpacity onPress={()=>navigation.navigate('writescreen')}>
                     <Text style={styles.writeButton}>강의대화에 글쓰기</Text>
+                    </TouchableOpacity>
                     <View style={styles.contentItem}>
                         <View style={styles.userInfo}>
                             <Image/>
