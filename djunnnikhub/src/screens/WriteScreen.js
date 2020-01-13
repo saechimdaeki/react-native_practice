@@ -25,7 +25,7 @@ class  WriteScreen extends React.Component{
     
     <SafeAreaView style={styles.container}>
         <View style={styles.header}>
-            <Icon onPress={()=>{navigation.goBack()}} style={{color:'#fff',fontSize:26, position:'absolute',left:15,}} name='ios-arrow-back'/>
+            <Icon onPress={()=>{this.props.navigation.goBack()}} style={{color:'#fff',fontSize:26, position:'absolute',left:15,}} name='ios-arrow-back'/>
             <View style={{flexDirection:'column'}}>
             <Text style={styles.title}>글쓰기</Text>
             <Text style={{color:'white',marginLeft:110}}>모바일앱개발연구</Text>
