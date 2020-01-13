@@ -47,7 +47,7 @@ const headata=[
 class FlatListItem extends Component{
     render() {
         return(
-          <View style ={{flex:1,marginRight: 20,justifyContent: 'center', alignItems: 'center'}}>
+          <View style ={{flex:1,marginRight: 20,marginBottom:10,justifyContent: 'center', alignItems: 'center'}}>
               <Text>{this.props.item.name}</Text>
           </View>
 
