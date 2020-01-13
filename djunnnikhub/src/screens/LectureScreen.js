@@ -1,5 +1,5 @@
 import React ,{useState, Fragment,Component} from 'react';
-import {SafeAreaView,View,Text,StyleSheet, Image,FlatList} from 'react-native';
+import {SafeAreaView,View,Text,StyleSheet, Image,FlatList, TouchableOpacity} from 'react-native';
 
 const data = {"result":"success","groupId":21,"ownerName":"000","groupName":"모바일앱개발연구","ownerId":2,"memberLength":38,"groupPath":"/앱연구","groupPhoto":"https://khub.jbnu.ac.kr/img/group/background/default_0.jpg","isAdmin":false,"isJoin":true,"groupAuth":0}
 const headata=[
@@ -45,10 +45,15 @@ const headata=[
     }
 ]
 class FlatListItem extends Component{
+    alertItemName = (item) => {
+        alert(item.name)
+     }
     render() {
         return(
           <View style ={{flex:1,marginRight: 20,marginBottom:10,justifyContent: 'center', alignItems: 'center'}}>
+            <TouchableOpacity onPress={()=>this.alertItemName(this.props.item)}>
               <Text>{this.props.item.name}</Text>
+              </TouchableOpacity>
           </View>
 
         );
@@ -70,7 +75,9 @@ const LectureScreen = ({navigation,id}) => {
                         horizontal={true}
                         renderItem={({item,index})=>{
                             return(
+                                
                                 <FlatListItem item={item}index={index}></FlatListItem>
+                                
                             )
                         }}
                         
