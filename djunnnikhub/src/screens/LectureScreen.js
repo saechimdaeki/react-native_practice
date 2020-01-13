@@ -1,7 +1,59 @@
-import React ,{useState, Fragment} from 'react';
-import {SafeAreaView,View,Text,StyleSheet, Image} from 'react-native';
+import React ,{useState, Fragment,Component} from 'react';
+import {SafeAreaView,View,Text,StyleSheet, Image,FlatList} from 'react-native';
 
 const data = {"result":"success","groupId":21,"ownerName":"000","groupName":"모바일앱개발연구","ownerId":2,"memberLength":38,"groupPath":"/앱연구","groupPhoto":"https://khub.jbnu.ac.kr/img/group/background/default_0.jpg","isAdmin":false,"isJoin":true,"groupAuth":0}
+const headata=[
+    {
+        "key":"1",
+        "name":"강의대화"
+    },
+    {
+        "key":"2",
+        "name":"자료"
+    },
+    {
+        "key":"3",
+        "name":"멤버"
+    },
+    {
+        "key":"4",
+        "name":"출석체크"
+    },
+    {
+        "key":"5",
+        "name":"레포트"
+    },
+    {
+        "key":"6",
+        "name":"쪽지"
+    },
+    {
+        "key":"7",
+        "name":"일정"
+    },
+    {
+        "key":"8",
+        "name":"북마크"
+    },
+    {
+        "key":"9",
+        "name":"공지사항"
+    },
+    {
+        "key":"10",
+        "name":"설문조사"
+    }
+]
+class FlatListItem extends Component{
+    render() {
+        return(
+          <View style ={{flex:1,marginRight: 20,justifyContent: 'center', alignItems: 'center'}}>
+              <Text>{this.props.item.name}</Text>
+          </View>
+
+        );
+    }
+}
 
 const LectureScreen = ({navigation,id}) => {
     const [name,setName] = useState(navigation.getParam('id','123'));
@@ -13,17 +65,16 @@ const LectureScreen = ({navigation,id}) => {
                     <Text style={styles.title}>{name}</Text>
                 </View>
                 <View style={styles.bar}>
-                    <Text style={styles.barItem}>강의대화</Text>
-                    <Text style={styles.barItem}>자료</Text>
-                    <Text style={styles.barItem}>멤버</Text>
-                    <Text style={styles.barItem}>출석체크</Text>
-                    <Text style={styles.barItem}>레포트</Text>
-                    <Text style={styles.barItem}>쪽지</Text>
-                    <Text style={styles.barItem}>정보수집</Text>
-                    <Text style={styles.barItem}>일정</Text>
-                    <Text style={styles.barItem}>북마크</Text>
-                    <Text style={styles.barItem}>공지사항</Text>
-                    <Text style={styles.barItem}>설문조사</Text>
+                    <FlatList 
+                        data={headata}
+                        horizontal={true}
+                        renderItem={({item,index})=>{
+                            return(
+                                <FlatListItem item={item}index={index}></FlatListItem>
+                            )
+                        }}
+                        
+                        />
                 </View>
             </View>
             <View style={styles.content}>
