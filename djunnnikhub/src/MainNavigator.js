@@ -20,7 +20,20 @@ import PrefFavoriteScreen from './screens/pref/PrefFavoriteScreen';
 import PrefHiddenGroupScreen from './screens/pref/PrefHiddenGroupScreen';
 
 import writescreen from './screens/WriteScreen';
+//lecturedetail
 import survey from './screens/lecturedetail/SurveyScreen';
+import bookmark from './screens/lecturedetail/BookMark';
+import data from './screens/lecturedetail/DataScreen';
+import member from './screens/lecturedetail/MemberScreen';
+import note from './screens/lecturedetail/NoteScreen';
+import notice from './screens/lecturedetail/NoticeScreen';
+import report from './screens/lecturedetail/ReportScreen';
+import schedule from './screens/lecturedetail/ScheduleScreen';
+import attendance from './screens/lecturedetail/AttendanceScreen';
+import datacollect from './screens/lecturedetail/DataCollect';
+
+
+
 import Animated, { Easing } from 'react-native-reanimated';
 
 const MainNavigator = createStackNavigator({
@@ -46,8 +59,17 @@ const MainNavigator = createStackNavigator({
 
     //강의대화 글쓰기
     writescreen:{screen:writescreen},
-    //설문조사
+    //강의조사 detail
     survey:{screen:survey},
+    bookmark:{screen:bookmark},
+    data:{screen:bookmark},
+    member:{screen:member},
+    note:{screen:note},
+    notice:{screen:notice},
+    report:{screen:report},
+    schedule:{screen:schedule},
+    attendance:{screen:attendance},
+    datacollect:{screen:datacollect},
 
 },{
     initialRouteName : 'Auth',

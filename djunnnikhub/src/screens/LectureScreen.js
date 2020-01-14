@@ -1,5 +1,6 @@
 import React ,{useState, Fragment,Component} from 'react';
 import {SafeAreaView,View,Text,StyleSheet, Image,FlatList, TouchableOpacity} from 'react-native';
+import WriteScreen from './WriteScreen';
 
 const data = {"result":"success","groupId":21,"ownerName":"000","groupName":"모바일앱개발연구","ownerId":2,"memberLength":38,"groupPath":"/앱연구","groupPhoto":"https://khub.jbnu.ac.kr/img/group/background/default_0.jpg","isAdmin":false,"isJoin":true,"groupAuth":0}
 const headata=[
@@ -29,46 +30,67 @@ const headata=[
     },
     {
         "key":"7",
-        "name":"일정"
+        "name":"정보수집"
     },
     {
         "key":"8",
-        "name":"북마크"
+        "name":"일정"
     },
     {
         "key":"9",
-        "name":"공지사항"
+        "name":"북마크"
     },
     {
         "key":"10",
+        "name":"공지사항"
+    },
+    {
+        "key":"11",
         "name":"설문조사"
     }
 ]
-
-/*
-class FlatListItem extends Component{
-   
-    alertItemName = (item) => {
-        alert(item.name)
-     }
-    render() {
-        return(
-          <View style ={{flex:1,marginRight: 20,marginBottom:10,justifyContent: 'center', alignItems: 'center'}}>
-            <TouchableOpacity onPress={()=>this.alertItemName(this.props.item)}>
-              <Text>{this.props.item.name}</Text>
-              </TouchableOpacity>
-          </View>
-
-        );
-    }
-}
-*/
 const LectureScreen = ({navigation,id}) => {
     const alertItemName = (item) => {
         alert(item.name)
-        if(item.name=="설문조사")
+        if(item.name=="자료")
+        {
+            navigation.navigate('data')
+        }
+        else if(item.name=="멤버")
+        {
+            navigation.navigate('member')
+        }
+        else if(item.name=="출석체크")
+        {
+            navigation.navigate('attendance')
+        }
+        else if(item.name=="레포트")
+        {
+            navigation.navigate('report')
+        }
+        else if(item.name=="쪽지")
+        {
+            navigation.navigate('note')
+        }
+        else if(item.name=="일정")
+        {
+            navigation.navigate('schedule')
+        }
+        else if(item.name=="북마크")
+        {
+            navigation.navigate('bookmark')
+        }
+        else if(item.name=="공지사항")
+        {
+            navigation.navigate('notice')
+        }
+        else if(item.name=="설문조사")
         {
             navigation.navigate('survey')
+        }
+        else if(item.name=="정보수집")
+        {
+            navigation.navigate('datacollect')
         }
     };
     const [name,setName] = useState(navigation.getParam('id','123'));
@@ -77,7 +99,9 @@ const LectureScreen = ({navigation,id}) => {
             <View style={styles.header}>
                 <Image style={styles.background} source={require('../img/background/default_0.jpg')}/>
                 <View style={styles.lecInfo}>
-                    <Text style={styles.title}>{name}</Text>
+                    <Text style={styles.title}>{name}
+                    
+                    </Text>
                 </View>
                 <View style={styles.bar}>
                     <FlatList 

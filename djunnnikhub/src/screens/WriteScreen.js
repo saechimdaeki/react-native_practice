@@ -1,16 +1,20 @@
 import React, { Fragment } from 'react';
-import {CheckBox,Image,SafeAreaView,View,Text,StyleSheet,TouchableWithoutFeedback,ToastAndroid, TouchableOpacity } from 'react-native';
+import {CheckBox,Image,SafeAreaView,View,Text,StyleSheet,TouchableWithoutFeedback,ToastAndroid, TouchableOpacity,useState } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { TextInput } from 'react-native-gesture-handler';
 import ImagePicker from 'react-native-image-picker';
-
+import Lecture from './LectureScreen';
 let photo = null
+
+
 class  WriteScreen extends React.Component{
+    
     state = {
         photo: null,
         inputtext:"",
         isuploading:false,
-        check:false
+        check:false,
+        
       };
       checknull(){
           const{inputtext}=this.state;
@@ -49,7 +53,8 @@ class  WriteScreen extends React.Component{
             <Icon onPress={()=>{this.props.navigation.goBack()}} style={{color:'#fff',fontSize:26, position:'absolute',left:15,}} name='ios-arrow-back'/>
             <View style={{flexDirection:'column'}}>
             <Text style={styles.title}>글쓰기</Text>
-            <Text style={{color:'white',marginLeft:110}}>모바일앱개발연구</Text>
+            <Text style={{color:'white',marginLeft:110}}>모바일앱개발연구 </Text>
+            {/*여기 값받아오는거 어떻게하는지 모르겟음...*/}
             </View>
             <TouchableOpacity onPress={_=>this.checknull()} >
             <Text  style={{flexDirection:'row-reverse',textAlign:'right',color:'white',marginRight:100}}>
