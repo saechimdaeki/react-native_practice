@@ -1,14 +1,28 @@
 import React, { Fragment } from 'react';
-import {Platform,Image,SafeAreaView,View,Text,StyleSheet,TouchableWithoutFeedback,ToastAndroid, TouchableOpacity } from 'react-native';
+import {CheckBox,Image,SafeAreaView,View,Text,StyleSheet,TouchableWithoutFeedback,ToastAndroid, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { TextInput } from 'react-native-gesture-handler';
 import ImagePicker from 'react-native-image-picker';
+import { DocumentPicker, DocumentPickerUtil } from "react-native-document-picker";
 
 let photo = null
 class  WriteScreen extends React.Component{
     state = {
         photo: null,
+        inputtext:"",
+        isuploading:false,
+        check:false
       };
+      checknull(){
+          const{inputtext}=this.state;
+          if(inputtext==""){
+            ToastAndroid.show('내용을 입력하세요',ToastAndroid.SHORT)
+          }else {
+            ;
+              //업로드 
+          }
+      }
+
       handleChoosePhoto=() => {
         const options = {
           noData: true,
@@ -19,6 +33,28 @@ class  WriteScreen extends React.Component{
           }
         });
       };
+      TryUploadFile = () => {
+
+        DocumentPicker.show({
+          filetype: [DocumentPickerUtil.images()],
+        },(error,res) => {
+          // Android
+          console.log(
+             res.uri,
+             res.type, // mime type
+             res.fileName,
+             res.fileSize
+          );
+        });
+    
+      }
+     checkboxstate()
+     {
+        this.setState({
+            check:!this.state.check
+        })
+     }
+  
     render(){
         const { photo } = this.state;
     return (
@@ -30,7 +66,7 @@ class  WriteScreen extends React.Component{
             <Text style={styles.title}>글쓰기</Text>
             <Text style={{color:'white',marginLeft:110}}>모바일앱개발연구</Text>
             </View>
-            <TouchableOpacity onPress={ToastAndroid.show('내용을 입력하세요',ToastAndroid.SHORT)} >
+            <TouchableOpacity onPress={_=>this.checknull()} >
             <Text  style={{flexDirection:'row-reverse',textAlign:'right',color:'white',marginRight:100}}>
                 완료
             </Text>
@@ -42,7 +78,8 @@ class  WriteScreen extends React.Component{
             >    
             </TextInput>
             <View style={{flex:1,borderTopWidth:1}}>
-            {photo && (
+            {
+            photo && (
           <Image
             source={{ uri: photo.uri }}
             style={{ width: 300, height: 300 }}
@@ -54,9 +91,17 @@ class  WriteScreen extends React.Component{
             <TouchableOpacity>
             <Icon name="ios-camera" size={50} onPress={this.handleChoosePhoto} style={{marginLeft:10}}/>
             </TouchableOpacity>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={this.TryUploadFile}>
             <Icon name="ios-clipboard" size={50} style={{marginLeft:20}}/>
             </TouchableOpacity>
+            <CheckBox 
+            value={this.state.check}
+                onClick={()=>this.checkboxstate()}
+                style={{marginTop:10,marginLeft:20}}
+                />
+                <Text style={{marginTop:15}}>
+                    멤버전체메일전송
+                </Text>
         </View>
     </SafeAreaView>
     )

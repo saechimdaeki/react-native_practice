@@ -1,30 +1,51 @@
-import React, { Fragment } from 'react';
-import {Platform,SafeAreaView,View,Text,StyleSheet,TouchableWithoutFeedback, Alert } from 'react-native';
+import React, {useState} from 'react';
+import { View, StyleSheet, Text, SafeAreaView, Alert } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-import CustomButton from '../../components/customButton';
-import InfoButton from '../../components/InfoButton';
+import AnimatedSwitch from '../../components/AnimatedSwitch';
 
 const NoteScreen = ({navigation})=>{
-    
-        return (
+
+    return (
+
         <SafeAreaView style={styles.container}>
-            <View style={styles.header}>
-                <Icon onPress={()=>{navigation.goBack()}} style={{color:'#fff',fontSize:26, position:'absolute',left:15,}} name='ios-arrow-back'/>
-                <Text style={styles.title}>쪽지</Text>
-                <Icon onPress={()=>{Alert.alert('쪽지 만들기')}} name='md-add' style={{color:'#fff',fontSize:26, position:'absolute',right:15,}} /> 
+        <View style={styles.header}>
+            <Icon onPress={()=>{navigation.goBack()}} style={{color:'#fff',fontSize:26, position:'absolute',left:15,}} name='ios-arrow-back'/>
+            <Text style={styles.title}>쪽지</Text>
+            <Text onPress={()=>{Alert.alert('쪽지 보내기 완료')}} style={{color:'#fff',fontSize:22, position:'absolute',right:15,}}>완료</Text> 
+        </View>
+        <View style={styles.contents}>
+        <View style={styles.SpaceContainer}>
+            <View style={styles.containernull}>
+                <AnimatedSwitch/>
             </View>
-            <View style={styles.contents}>
-           
+            <View style={styles.SpaceContainer}>
+                <Text>
+                    보관함에 쪽지가 없습니다.
+                </Text>
             </View>
-        </SafeAreaView>
-        )
+        </View>
+        </View>
+
+    </SafeAreaView>
+
+    )
 }
+
 const styles = StyleSheet.create({
     container:{
         flex:1,
         justifyContent:'center',
         alignItems:'center',
+    },
+    containernull:{
+        paddingTop: 10,
+        paddingRight: 180,
+    },
+    SpaceContainer:{
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center"
     },
     title:{
         fontSize:22,
@@ -46,4 +67,5 @@ const styles = StyleSheet.create({
         paddingTop:15,
     },
 });
+
 export default NoteScreen;

@@ -14,6 +14,7 @@ import NoteScreen from './screens/note/NoteScreen';
 import MyPageScreen from './screens/my/MyPageScreen';
 
 import NoticeScreen from './screens/notice/NoticeScreen';
+import NoticeDetailScreen from './screens/notice/NoticeDetailScreen';
 
 import PrefFavoriteScreen from './screens/pref/PrefFavoriteScreen';
 import PrefHiddenGroupScreen from './screens/pref/PrefHiddenGroupScreen';
@@ -33,6 +34,7 @@ const MainNavigator = createStackNavigator({
     MyPage : {screen:MyPageScreen},
     //Notice 공지
     Notice : {screen:NoticeScreen},
+    NoticeDetail : {screen:NoticeDetailScreen},
     //Note 쪽지
     Note : {screen:NoteScreen},
     //Group 그룹
