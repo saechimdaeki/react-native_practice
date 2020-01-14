@@ -44,7 +44,10 @@ const headata=[
         "name":"설문조사"
     }
 ]
+
+/*
 class FlatListItem extends Component{
+   
     alertItemName = (item) => {
         alert(item.name)
      }
@@ -59,8 +62,15 @@ class FlatListItem extends Component{
         );
     }
 }
-
+*/
 const LectureScreen = ({navigation,id}) => {
+    const alertItemName = (item) => {
+        alert(item.name)
+        if(item.name=="설문조사")
+        {
+            navigation.navigate('survey')
+        }
+    };
     const [name,setName] = useState(navigation.getParam('id','123'));
     return(
         <SafeAreaView style={styles.container}>
@@ -75,8 +85,12 @@ const LectureScreen = ({navigation,id}) => {
                         horizontal={true}
                         renderItem={({item,index})=>{
                             return(
-                                
-                                <FlatListItem item={item}index={index}></FlatListItem>
+                                <View style ={{flex:1,marginRight: 20,marginBottom:10,justifyContent: 'center', alignItems: 'center'}}>
+                                    <TouchableOpacity onPress={()=>alertItemName(item)}>
+                                <Text>{item.name} </Text>
+                                </TouchableOpacity>
+
+                                </View>
                                 
                             )
                         }}

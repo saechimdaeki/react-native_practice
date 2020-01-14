@@ -20,7 +20,7 @@ import PrefFavoriteScreen from './screens/pref/PrefFavoriteScreen';
 import PrefHiddenGroupScreen from './screens/pref/PrefHiddenGroupScreen';
 
 import writescreen from './screens/WriteScreen';
-
+import survey from './screens/lecturedetail/SurveyScreen';
 import Animated, { Easing } from 'react-native-reanimated';
 
 const MainNavigator = createStackNavigator({
@@ -46,6 +46,8 @@ const MainNavigator = createStackNavigator({
 
     //강의대화 글쓰기
     writescreen:{screen:writescreen},
+    //설문조사
+    survey:{screen:survey},
 
 },{
     initialRouteName : 'Auth',

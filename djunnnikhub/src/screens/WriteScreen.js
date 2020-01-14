@@ -3,7 +3,6 @@ import {CheckBox,Image,SafeAreaView,View,Text,StyleSheet,TouchableWithoutFeedbac
 import Icon from 'react-native-vector-icons/Ionicons';
 import { TextInput } from 'react-native-gesture-handler';
 import ImagePicker from 'react-native-image-picker';
-import { DocumentPicker, DocumentPickerUtil } from "react-native-document-picker";
 
 let photo = null
 class  WriteScreen extends React.Component{
@@ -33,21 +32,7 @@ class  WriteScreen extends React.Component{
           }
         });
       };
-      TryUploadFile = () => {
-
-        DocumentPicker.show({
-          filetype: [DocumentPickerUtil.images()],
-        },(error,res) => {
-          // Android
-          console.log(
-             res.uri,
-             res.type, // mime type
-             res.fileName,
-             res.fileSize
-          );
-        });
-    
-      }
+      
      checkboxstate()
      {
         this.setState({
@@ -91,7 +76,7 @@ class  WriteScreen extends React.Component{
             <TouchableOpacity>
             <Icon name="ios-camera" size={50} onPress={this.handleChoosePhoto} style={{marginLeft:10}}/>
             </TouchableOpacity>
-            <TouchableOpacity onPress={this.TryUploadFile}>
+            <TouchableOpacity >
             <Icon name="ios-clipboard" size={50} style={{marginLeft:20}}/>
             </TouchableOpacity>
             <CheckBox 
