@@ -4,7 +4,6 @@ import Icon from 'react-native-vector-icons/Ionicons';
 
 import CustomButton from '../../components/customButton';
 import InfoButton from '../../components/InfoButton';
-//import { TouchableOpacity } from 'react-native-gesture-handler';
 
 //https://khub.jbnu.ac.kr/mobile/appdbbroker/web_notice/list.jsp?BKQW5HD=true&group_id=0&reload=1&user_id=16832&version=20200103
 const notice_list = [
@@ -14,7 +13,7 @@ const notice_list = [
     ,"count": 8
     ,"group_id": 0
     ,"user_id": 1
-    ,"post_id": 11278
+    ,post_id: 11278
     ,"date": "2019-12-20"},
     {"user_name": "ADMIN"
     ,"body": "안녕하세요JBNUHUB 관리자입니다.오늘 JBNUHUB 모바일앱을 이용해주시는 분들에게모바일앱 오류로 인한 불편을 드린 점 사과의 말씀 드립니다.(Mismatch of CPU Architecture) 오류는 안드로이폰에 한하여 발생된 것으로,구글 플레이(Google Play) 운영정책 변경에 따른 문제로 확인되었습니다.2019년 9월 4일 (수) 오전 9:00 에 복구가 완료되어 정상적으로 작동되오니,안드로이드폰으로 JBNUHUB 모바일앱을 이용하는 분들께서는앱 업데이트를 진행해주시기를부탁드립니다.그리고 신규 이용자분들께서는 JBNUHUB 모바일앱을 설치하신 후, 이용 부탁드립니다.안드로이드폰 JBNUHUB 모바일앱 설치 후, 실행시 (Mismatch of CPU Architecture) 가보이시는 분들은 아래 업데이트 방법을 참고하여 시행해주시기 바랍니다.1) Play스토어 또는 구글 플레이(Google Play) 앱 실행2) 왼쪽 상단의 \"가로줄 3개\" 인 아이콘 클릭 > 내 앱/게임 메뉴 클릭3) JBNUHUB 앱을 찾기 > 오른쪽의 \"업데이트\" 버튼이 보이면 \"업데이트\" 버튼 클릭앱 업데이트를 해도 (Mismatch of CPU Architecture) 가 계속 나타나는 경우에는(Mismatch of CPU Architecture) 경고창 하단의 get CrossWalk 버튼을 눌러[Crosswalk Project 64bit] 앱를 설치하신 후, JBNUHUB 모바일앱을 재실행해주시기 바랍니다.앞으로 더욱 노력하는 JBNUHUB 시스템이 되도록 하겠습니다.다시 한번 불편을 드려 죄송합니다.감사합니다.JBNUHUB 관리자 드림.* 모바일웹 오류 해결 안내모바일웹상의 회원정보수정 및 강의가입이 안되는 오류가 발견되어2019.09.04 (수) 새벽 2시경에 수정되었사오니, 이 점 참고 부탁드립니다."
@@ -31,16 +30,16 @@ const notice_list = [
     ,"count": 14
     ,"group_id": 0
     ,"user_id": 1
-    ,"post_id": 10927
+    ,post_id: 10927
     ,"date": "2019-08-27"
     },
-    {user_name: "ADMIN"
+    {"user_name": "ADMIN"
     ,"body": "안녕하세요.케이허브 관리자입니다. 금일6월 8일(토)전산원 IDC 전원 재부팅 도중 케이허브 데이터베이스 시스템이 재부팅 과정에서데이터베이스가 기동되지 않는 문제가 발생하였습니다.백업된 데이터베이스(금일 오전3시 기준)를 복원하여 케이허브 서비스를다시 정상 운영되도록 하였습니다.오전 3시 이후에 레포트 및 기타 콘텐츠를 등록하신 사용자 분들은 재등록해주시면 감사하겠습니다.이용에 불편을 드려 죄송합니다. 감사합니다."
     ,"title": "KHUB 서비스 접속장애 복구 안내"
     ,"count": 24
     ,"group_id": 0
     ,"user_id": 1
-    ,"post_id": 10884
+    ,post_id: 10884
     ,"date": "2019-06-08"
     },
     {"user_name": "ADMIN"
@@ -49,25 +48,25 @@ const notice_list = [
     ,"count": 8
     ,"group_id": 0
     ,"user_id": 1
-    ,"post_id": 10787
+    ,post_id: 10787
     ,"date": "2019-03-21"
     },
-    {user_name: "ADMIN"
+    {"user_name": "ADMIN"
     ,"body": "안녕하세요 K-HUB 관리자 입니다.﻿서비스안정화를 위해서버 업그레이드를 진행하고자 합니다.이로 인해 일정시간동안 K-HUB 서비스가잠시 중단되오니,서비스 이용에참고해주시기 바랍니다. ◎ 서비스 중단 일시    - 2018년 2월 26일(월) 17:00 ~18:00 (1시간)"
     ,"title": "서버 업그레이드로 인한 서비스 중단 안내"
     ,"count": 72
     ,"group_id": 0
     ,"user_id": 1
-    ,"post_id": 10287
+    ,post_id: 10287
     ,"date": "2018-02-23"
     },
-    {user_name: "ADMIN"
+    {"user_name": "ADMIN"
     ,"body": "KHUB 가 10월 28 (토) 대학 외부에서 접속이 안되고 있습니다만 휴일인 관계로 전산원과 연락이 어려워정확한 장애원인 파악이 어려운 상황입니다. 월요일 오전에 담당자와 연락되는대로 신속히 고치도록 하겠습니다. 이용에 불편을 드려 죄송합니다.크롬브라우저로는 접속이 되오니, 참고하시기 바랍니다."
     ,"title": "KHUB 휴일접속장애 "
     ,"count": 40
     ,"group_id": 0
     ,"user_id": 1
-    ,"post_id": 10208
+    ,post_id: 10208
     ,"date": "2017-10-28"
     },
     {user_name: "ADMIN"
@@ -76,7 +75,7 @@ const notice_list = [
     ,"count": 21
     ,"group_id": 0
     ,"user_id": 1
-    ,"post_id": 10187
+    ,post_id: 10187
     ,"date": "2017-10-13"
     },
     {user_name: "ADMIN"
@@ -85,7 +84,7 @@ const notice_list = [
     ,"count": 10
     ,"group_id": 0
     ,"user_id": 1
-    ,"post_id": 10186
+    ,post_id: 10186
     ,"date": "2017-10-13"
     },
     {user_name: "ADMIN"
@@ -94,14 +93,11 @@ const notice_list = [
     ,"count": 50
     ,"group_id": 0
     ,"user_id": 1
-    ,"post_id": 10142
+    ,post_id: 10142
     ,"date": "2017-09-06"
     },
 
 ]
-
-
-
 
 const NoticeScreen = ({navigation}) => {
     return (
@@ -117,10 +113,7 @@ const NoticeScreen = ({navigation}) => {
                             renderItem = {({item})=>
                             <View style={styles.list}>
                             <TouchableOpacity
-                                onPress={
-                                    //{Alert.alert(item.body)}
-                                    ()=>navigation.navigate('NoticeDetail',
-                                    {
+                                onPress={()=>navigation.navigate('NoticeDetail',{
                                         title: item.title,
                                         body: item.body,
                                         user_name: item.user_name,
@@ -138,7 +131,7 @@ const NoticeScreen = ({navigation}) => {
                             </TouchableOpacity>
                             </View>
                             }
-                            keyExtractor = {(item,index)=>item.index}
+                            keyExtractor = {(item,index)=> {return item.post_id.toString()}}
                     />
             </View>
         </SafeAreaView>
@@ -170,13 +163,13 @@ const styles = StyleSheet.create({
         height:250,
         width:'100%',
         backgroundColor:'#eee',
-        paddingTop:15,
     },
     list:{
+        backgroundColor:'#fff',
         padding:10, 
         borderStyle: 'solid', 
-        borderWidth:1 ,
-        borderColor: 'gray'
+        borderWidth:0.3 ,
+        borderColor: '#aaa'
     },
 });
 export default NoticeScreen;

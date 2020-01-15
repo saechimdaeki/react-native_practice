@@ -3,7 +3,6 @@ import {CheckBox,Image,SafeAreaView,View,Text,StyleSheet,TouchableWithoutFeedbac
 import Icon from 'react-native-vector-icons/Ionicons';
 import { TextInput } from 'react-native-gesture-handler';
 import ImagePicker from 'react-native-image-picker';
-import Lecture from './LectureScreen';
 let photo = null
 
 

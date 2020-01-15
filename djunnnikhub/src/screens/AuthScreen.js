@@ -9,7 +9,7 @@ const AuthScreen = ({navigation})=> {
     const [pw,setPw] = useState('');
 
     const _LoginHandle = () =>{
-          navigation.navigate('Home');
+       navigation.navigate('Home');
     }
 
     return (

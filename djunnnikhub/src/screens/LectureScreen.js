@@ -1,6 +1,8 @@
 import React ,{useState, Fragment,Component} from 'react';
-import {SafeAreaView,View,Text,StyleSheet, Image,FlatList, TouchableOpacity} from 'react-native';
-import WriteScreen from './WriteScreen';
+
+import {SafeAreaView,View,Text,StyleSheet, Image,FlatList, TouchableOpacity, TouchableWithoutFeedback, Alert} from 'react-native';
+import Icon from 'react-native-vector-icons/Ionicons';
+
 
 const data = {"result":"success","groupId":21,"ownerName":"000","groupName":"모바일앱개발연구","ownerId":2,"memberLength":38,"groupPath":"/앱연구","groupPhoto":"https://khub.jbnu.ac.kr/img/group/background/default_0.jpg","isAdmin":false,"isJoin":true,"groupAuth":0}
 const headata=[
@@ -49,6 +51,7 @@ const headata=[
         "name":"설문조사"
     }
 ]
+
 const LectureScreen = ({navigation,id}) => {
     const alertItemName = (item) => {
         alert(item.name)
@@ -97,11 +100,26 @@ const LectureScreen = ({navigation,id}) => {
     return(
         <SafeAreaView style={styles.container}>
             <View style={styles.header}>
+                <TouchableWithoutFeedback onPress={()=>navigation.goBack()}>
+                    <Icon style={{position:'absolute',zIndex:5,top:5,fontSize:25,padding:5,color:'#fff',left:5}} name='ios-home'/>
+                </TouchableWithoutFeedback>
+                <TouchableWithoutFeedback onPress={()=>Alert.alert('검색')}>
+                    <Icon style={{position:'absolute',zIndex:5,top:5,fontSize:25,padding:5,color:'#fff',right:5}}  name='ios-search'/>
+                </TouchableWithoutFeedback>
                 <Image style={styles.background} source={require('../img/background/default_0.jpg')}/>
                 <View style={styles.lecInfo}>
-                    <Text style={styles.title}>{name}
-                    
-                    </Text>
+
+                    <Text style={styles.title}>{name}</Text>
+                    <View style={{flexDirection:'row'}}>
+                        <Text>인원 0</Text>
+                        <TouchableWithoutFeedback onPress={()=>Alert.alert('관리')}>
+                            <Text style={{color:'blue',marginLeft:10}}>관리</Text>
+                        </TouchableWithoutFeedback>
+                        <TouchableWithoutFeedback onPress={()=>Alert.alert('주차별 강의 관리')}>
+                            <Text style={{color:'blue',position:'absolute',right:0}}>주차별 강의 관리</Text>
+                        </TouchableWithoutFeedback>
+                    </View>
+
                 </View>
                 <View style={styles.bar}>
                     <FlatList 
@@ -109,12 +127,14 @@ const LectureScreen = ({navigation,id}) => {
                         horizontal={true}
                         renderItem={({item,index})=>{
                             return(
+
                                 <View style ={{flex:1,marginRight: 20,marginBottom:10,justifyContent: 'center', alignItems: 'center'}}>
                                     <TouchableOpacity onPress={()=>alertItemName(item)}>
                                 <Text>{item.name} </Text>
                                 </TouchableOpacity>
 
                                 </View>
+
                                 
                             )
                         }}

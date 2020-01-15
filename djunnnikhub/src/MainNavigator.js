@@ -21,17 +21,17 @@ import PrefHiddenGroupScreen from './screens/pref/PrefHiddenGroupScreen';
 
 import writescreen from './screens/WriteScreen';
 //lecturedetail
-import survey from './screens/lecturedetail/SurveyScreen';
-import bookmark from './screens/lecturedetail/BookMark';
-import data from './screens/lecturedetail/DataScreen';
-import member from './screens/lecturedetail/MemberScreen';
-import note from './screens/lecturedetail/NoteScreen';
-import notice from './screens/lecturedetail/NoticeScreen';
-import report from './screens/lecturedetail/ReportScreen';
-import schedule from './screens/lecturedetail/ScheduleScreen';
-import attendance from './screens/lecturedetail/AttendanceScreen';
-import datacollect from './screens/lecturedetail/DataCollect';
-
+import survey from './screens/lecture/SurveyScreen';
+import bookmark from './screens/lecture/BookMark';
+import data from './screens/lecture/DataScreen';
+import member from './screens/lecture/MemberScreen';
+import note from './screens/lecture/NoteScreen';
+import notice from './screens/lecture/NoticeScreen';
+import report from './screens/lecture/ReportScreen';
+import schedule from './screens/lecture/ScheduleScreen';
+import attendance from './screens/lecture/AttendanceScreen';
+import datacollect from './screens/lecture/DataCollect';
+import createAttendance from './screens/lecture/createAttendance';
 
 
 import Animated, { Easing } from 'react-native-reanimated';
@@ -70,6 +70,7 @@ const MainNavigator = createStackNavigator({
     schedule:{screen:schedule},
     attendance:{screen:attendance},
     datacollect:{screen:datacollect},
+    createAttendance:{screen:createAttendance},
 
 },{
     initialRouteName : 'Auth',
