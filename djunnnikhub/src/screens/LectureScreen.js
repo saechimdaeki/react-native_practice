@@ -1,8 +1,8 @@
 import React ,{useState, Fragment,Component} from 'react';
 
-import {SafeAreaView,View,Text,StyleSheet, Image,FlatList, TouchableOpacity, TouchableWithoutFeedback, Alert} from 'react-native';
+import {SafeAreaView,View,Text,StyleSheet,Dimensions ,Image,FlatList, TouchableOpacity, TouchableWithoutFeedback, Alert} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
-
+import Modal from "react-native-modal";
 
 const data = {"result":"success","groupId":21,"ownerName":"000","groupName":"모바일앱개발연구","ownerId":2,"memberLength":38,"groupPath":"/앱연구","groupPhoto":"https://khub.jbnu.ac.kr/img/group/background/default_0.jpg","isAdmin":false,"isJoin":true,"groupAuth":0}
 const headata=[
@@ -53,8 +53,22 @@ const headata=[
 ]
 
 const LectureScreen = ({navigation,id}) => {
+    const [modal,setModal] = useState(false);
+     /**
+     * modal screen 변수
+     * const {deviceWidth} = 디바이스의 너비 얻기
+     * const {deviceHeight} = 디바이스의 높이 얻기
+     */
+    const deviceWidth = Dimensions.get("window").width;
+    const deviceHeight = Platform.OS === "ios"
+      ? Dimensions.get("window").height
+      : require("react-native-extra-dimensions-android").get("REAL_WINDOW_HEIGHT");
+    /**
+     * back button handler
+     * for => app exit
+     */
     const alertItemName = (item) => {
-        alert(item.name)
+       // alert(item.name)
         if(item.name=="자료")
         {
             navigation.navigate('data')
@@ -69,7 +83,7 @@ const LectureScreen = ({navigation,id}) => {
         }
         else if(item.name=="레포트")
         {
-            navigation.navigate('report')
+            setModal(true)
         }
         else if(item.name=="쪽지")
         {
@@ -97,6 +111,24 @@ const LectureScreen = ({navigation,id}) => {
         }
     };
     const [name,setName] = useState(navigation.getParam('id','123'));
+      /**
+     * modal 화면 이동
+     * @param {int} val = type value
+     */
+    const moveModal = (val) => {
+        if(val==null || val==''){
+            return false;
+        }
+        setModal(false);
+        switch(val){
+            case 1: 
+                navigation.navigate('report');
+                break;
+            case 2:
+                navigation.navigate('quizScreen');
+                break;
+        }
+    }
     return(
         <SafeAreaView style={styles.container}>
             <View style={styles.header}>
@@ -127,18 +159,13 @@ const LectureScreen = ({navigation,id}) => {
                         horizontal={true}
                         renderItem={({item,index})=>{
                             return(
-
                                 <View style ={{flex:1,marginRight: 20,marginBottom:10,justifyContent: 'center', alignItems: 'center'}}>
                                     <TouchableOpacity onPress={()=>alertItemName(item)}>
                                 <Text>{item.name} </Text>
                                 </TouchableOpacity>
-
                                 </View>
-
-                                
                             )
                         }}
-                        
                         />
                 </View>
             </View>
@@ -162,9 +189,23 @@ const LectureScreen = ({navigation,id}) => {
                         </View>
                     </View>
             </View>
-            <View style={styles.footer}>
-
-            </View>
+           
+            {/* Modal View */}
+            <Modal style={styles.modal} 
+                    isVisible={modal} 
+                    onBackdropPress={() => setModal(false)} 
+                    deviceHeight={deviceHeight}
+                    deviceWidth={deviceWidth}>
+                <View style={styles.modalview}>
+                    <TouchableWithoutFeedback onPress={() => {moveModal(1)}}>
+                        <Text style={styles.modalitem}>레포트</Text>
+                    </TouchableWithoutFeedback>
+                    <TouchableWithoutFeedback onPress={() => {moveModal(2)}}>
+                        <Text style={styles.modalitem}>퀴즈</Text>
+                    </TouchableWithoutFeedback>
+                
+                </View>
+            </Modal>
         </SafeAreaView>
     )
 }
@@ -242,7 +283,36 @@ const styles = StyleSheet.create({
         borderWidth:1,
         justifyContent:'space-around',
         alignItems:'center'
-    }
+    },
+    modal : {
+        flex:1,
+        justifyContent:'flex-end',
+        width:'80%',
+        marginHorizontal:'10%',
+    },
+    modalview : {
+        backgroundColor:'#fff',
+        justifyContent:'center',
+        alignItems:'center',
+        borderRadius:5,
+        padding:5,
+    },
+    modalitem : {
+        width:'100%',
+        fontSize:18,
+        textAlign:'center',
+        paddingVertical:10,
+    },
+    item: {
+        width:132,
+        height:160,
+        margin:10,
+        borderRadius:10,
+        overflow:'hidden',
+        borderWidth:0.75,
+        borderColor:'#eee',
+        borderStyle:'dotted'
+    },
 });
 
 export default LectureScreen;

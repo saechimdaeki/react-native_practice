@@ -32,7 +32,8 @@ import schedule from './screens/lecture/ScheduleScreen';
 import attendance from './screens/lecture/AttendanceScreen';
 import datacollect from './screens/lecture/DataCollect';
 import createAttendance from './screens/lecture/createAttendance';
-
+import quizScreen from './screens/lecture/QuizScreen';
+import createReport from './screens/lecture/createReport';
 
 import Animated, { Easing } from 'react-native-reanimated';
 
@@ -71,6 +72,8 @@ const MainNavigator = createStackNavigator({
     attendance:{screen:attendance},
     datacollect:{screen:datacollect},
     createAttendance:{screen:createAttendance},
+    quizScreen:{screen:quizScreen},
+    createReport:{screen:createReport},
 
 },{
     initialRouteName : 'Auth',

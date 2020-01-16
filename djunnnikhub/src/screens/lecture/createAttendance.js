@@ -5,7 +5,6 @@ import { TextInput } from 'react-native-gesture-handler';
 class  createAttandance extends React.Component{
     constructor() {
         super();
-    
         this.state = { currentTime: null, currentDay: null, promiseTime:null  }
         this.daysArray = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
       }
@@ -151,11 +150,9 @@ class  createAttandance extends React.Component{
             <Text style={{color:'white',fontWeight:'normal',justifyContent:'center',fontSize:12,marginLeft:20}}>모바일앱개발연구</Text>
              {/*여기 값받아오는거 어떻게하는지 모르겟음...*/}
             </View>
-            
         </View>
         <View style={{flex:15}}>
             <View style={{flex:3,borderBottomWidth:1}}>
-
                 <Text style={{marginLeft:10,marginTop:10}}>
                     시작시간
                 </Text>
@@ -166,26 +163,23 @@ class  createAttandance extends React.Component{
             </View>
             <View style={{flex:3,borderBottomWidth:1}}>
                 <View style={{flexDirection:'row',marginLeft:10,marginTop:10}}>
-                <Text>
+                <Text style={{marginTop:10,marginLeft:10}}>
                     종료시간 
                 </Text>
-                
+                <View style={{marginLeft:20}}> 
                 <Button title='5분' 
-                
                 onPress={this.fiveTime}  />
-
-                
+                </View>   
+                <View style={{marginLeft:5}}>
                 <Button title='10분' onPress={this.tenTime}/> 
-
-                
-                <Button title='15분' onPress={this.fifteenTime}/>
+                </View>
+                <View style={{marginLeft:5}}>
+                <Button title='15분' onPress={this.fifteenTime} />
+                </View>
                     </View>
-                
                 <Text style={{fontSize:20,marginTop:10,marginLeft:10}}>
                    {this.state.promiseTime}
                 </Text>
-
-
             </View>
             <View style={{flex:4,borderBottomWidth:1}}>
                 <Text style={{marginLeft:10,marginTop:20}}>
@@ -198,7 +192,13 @@ class  createAttandance extends React.Component{
                 </TextInput>
             </View> 
             <View style={{flex:5}}>
-                
+                <TouchableOpacity onPress={()=>{this.props.navigation.goBack()}}>
+                  <View style={{alignSelf:'center', backgroundColor:'dodgerblue', borderRadius: 100/2,width:100,height:30,marginTop:20}}> 
+                  <Text style={{alignSelf:'center',marginTop:5}}>
+                    출석부 생성
+                  </Text>
+                  </View>
+                </TouchableOpacity>
             </View>
 
 
